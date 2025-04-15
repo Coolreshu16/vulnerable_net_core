@@ -38,7 +38,7 @@ jobs:
         if: steps.triage.outputs.high_priority_vulnerabilities != ''
         uses: actions/github-script@v7
         with:
-          github-token: ${{ secrets.GITHUB_TOKEN }}
+          github-token: ${{ secrets.G_TOKEN }}
           script: |
             const output = `${{ steps.triage.outputs.high_priority_vulnerabilities }}`;
             const vulnerabilities = JSON.parse(output);
