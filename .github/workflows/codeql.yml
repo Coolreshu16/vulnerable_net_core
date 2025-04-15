@@ -100,10 +100,9 @@ jobs:
       uses: github/codeql-action/analyze@v3
       with:
         category: "/language:${{matrix.language}}"
-        sarif-results-output-dir: ${{ runner.temp }}/codeql_databases/javascript
 
     - name: Upload SARIF results
       uses: github/codeql-action/upload-sarif@v3
       with:
-       sarif_file: ${{ runner.temp }}/codeql_databases/javascript/results-javascript.sarif
-
+       sarif_file: ${{ github.workspace }}/results-javascript.sarif
+        
